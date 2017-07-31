@@ -1,0 +1,14 @@
+{# La page hérite de layout.html.twig #}
+{% extends "layout.html.twig" %}
+
+{# surcharge du bloc 'content' défini dans le layout #}
+{% block content %}
+    <p class="test"><b>Page de test - test.html.twig</b></p>
+{% endblock %}
+
+{# surcharge du bloc 'titre' défini dans le layout #}
+{% block title 'Test' %}
+
+{# équivaut à :
+{% block title %}Test{% enblock %}
+#}
