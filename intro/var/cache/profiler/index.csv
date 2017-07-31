@@ -75,3 +75,10 @@ e026e4,::1,GET,http://localhost/Silex/intro/web/index_dev.php/helloworld,1501512
 82577b,::1,GET,http://localhost/Silex/intro/web/index_dev.php/helloworld,1501512142,,200
 2e5509,::1,GET,http://localhost/Silex/intro/web/index_dev.php/hello/alex,1501513821,,500
 154ea4,::1,GET,http://localhost/Silex/intro/web/index_dev.php/hello/alex,1501513850,,200
+ca06ca,::1,GET,http://localhost/Silex/intro/web/index_dev.php/hello/alex,1501514626,,200
+279f0b,::1,GET,http://localhost/Silex/intro/web/index_dev.php/helloworld,1501514628,,200
+ea5e5f,::1,GET,http://localhost/Silex/intro/web/index_dev.php/helloworld,1501514758,,200
+26c7ec,::1,GET,http://localhost/Silex/intro/web/index_dev.php/hello/Alex,1501514760,,200
+9d7d29,::1,GET,http://localhost/Silex/intro/web/index_dev.php/helloworld,1501514761,,200
+ae301a,::1,GET,http://localhost/Silex/intro/web/index_dev.php/hello/Alex,1501514763,,200
+227cef,::1,GET,http://localhost/Silex/intro/web/index_dev.php/helloworld,1501514764,,200

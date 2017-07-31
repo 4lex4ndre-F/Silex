@@ -3,4 +3,6 @@
 
 {% block content %}
     <p>Hello World</p>
+    {# génère le chemin d'une route qui contient une variable #}
+    <p><a href="{{ path('hello', {name: 'Alex'}) }}">Vers la page hello Alex</a></p>
 {% endblock %}

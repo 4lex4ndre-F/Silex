@@ -21,38 +21,42 @@ class __TwigTemplate_bd3fb229717c3193e5cc7c40bdf821fb8863fdef46064118907c3ee30c9
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_89e375ed437ba9a5fecc6f0b55be1e565ea373793b9b902a3a2963c206dd0af8 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_89e375ed437ba9a5fecc6f0b55be1e565ea373793b9b902a3a2963c206dd0af8->enter($__internal_89e375ed437ba9a5fecc6f0b55be1e565ea373793b9b902a3a2963c206dd0af8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "helloworld.html.twig"));
+        $__internal_193cb2c1afa68adc63995a398650c2391a5de07d89f4081994ec838bb8336216 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_193cb2c1afa68adc63995a398650c2391a5de07d89f4081994ec838bb8336216->enter($__internal_193cb2c1afa68adc63995a398650c2391a5de07d89f4081994ec838bb8336216_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "helloworld.html.twig"));
 
-        $__internal_c3b43bcfd3732efd06c0f850a86f3e97d1d4e79be8ce12c8bd8a76068696760a = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_c3b43bcfd3732efd06c0f850a86f3e97d1d4e79be8ce12c8bd8a76068696760a->enter($__internal_c3b43bcfd3732efd06c0f850a86f3e97d1d4e79be8ce12c8bd8a76068696760a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "helloworld.html.twig"));
+        $__internal_8612bdd8dd548dc6cf24803d8a6618b30984652f1820c55373f0856457dbe7e3 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_8612bdd8dd548dc6cf24803d8a6618b30984652f1820c55373f0856457dbe7e3->enter($__internal_8612bdd8dd548dc6cf24803d8a6618b30984652f1820c55373f0856457dbe7e3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "helloworld.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_89e375ed437ba9a5fecc6f0b55be1e565ea373793b9b902a3a2963c206dd0af8->leave($__internal_89e375ed437ba9a5fecc6f0b55be1e565ea373793b9b902a3a2963c206dd0af8_prof);
+        $__internal_193cb2c1afa68adc63995a398650c2391a5de07d89f4081994ec838bb8336216->leave($__internal_193cb2c1afa68adc63995a398650c2391a5de07d89f4081994ec838bb8336216_prof);
 
         
-        $__internal_c3b43bcfd3732efd06c0f850a86f3e97d1d4e79be8ce12c8bd8a76068696760a->leave($__internal_c3b43bcfd3732efd06c0f850a86f3e97d1d4e79be8ce12c8bd8a76068696760a_prof);
+        $__internal_8612bdd8dd548dc6cf24803d8a6618b30984652f1820c55373f0856457dbe7e3->leave($__internal_8612bdd8dd548dc6cf24803d8a6618b30984652f1820c55373f0856457dbe7e3_prof);
 
     }
 
     // line 4
     public function block_content($context, array $blocks = array())
     {
-        $__internal_0b81fa0bffb29852c716ebe3db63ef3546e82abe8a8e85fcc8f91e5f50357934 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_0b81fa0bffb29852c716ebe3db63ef3546e82abe8a8e85fcc8f91e5f50357934->enter($__internal_0b81fa0bffb29852c716ebe3db63ef3546e82abe8a8e85fcc8f91e5f50357934_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_7dd8309fa08471760ea0111bc9e575a12622d1b5f1037ca56d33c20b62494707 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_7dd8309fa08471760ea0111bc9e575a12622d1b5f1037ca56d33c20b62494707->enter($__internal_7dd8309fa08471760ea0111bc9e575a12622d1b5f1037ca56d33c20b62494707_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
-        $__internal_1c51d643fd37e49bea02eeae4c0725c147cf75d641a97e6bbb4fe3a7cec68123 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_1c51d643fd37e49bea02eeae4c0725c147cf75d641a97e6bbb4fe3a7cec68123->enter($__internal_1c51d643fd37e49bea02eeae4c0725c147cf75d641a97e6bbb4fe3a7cec68123_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_addee4b6e6c39c9985cf9f59819e82aef210aa2d4504f5e96ca968ab0e4d2d3d = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_addee4b6e6c39c9985cf9f59819e82aef210aa2d4504f5e96ca968ab0e4d2d3d->enter($__internal_addee4b6e6c39c9985cf9f59819e82aef210aa2d4504f5e96ca968ab0e4d2d3d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         // line 5
         echo "    <p>Hello World</p>
+    <p><a href=\"";
+        // line 6
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("hello", array("name" => "Alex"));
+        echo "\">Vers la page hello Alex</a></p>
 ";
         
-        $__internal_1c51d643fd37e49bea02eeae4c0725c147cf75d641a97e6bbb4fe3a7cec68123->leave($__internal_1c51d643fd37e49bea02eeae4c0725c147cf75d641a97e6bbb4fe3a7cec68123_prof);
+        $__internal_addee4b6e6c39c9985cf9f59819e82aef210aa2d4504f5e96ca968ab0e4d2d3d->leave($__internal_addee4b6e6c39c9985cf9f59819e82aef210aa2d4504f5e96ca968ab0e4d2d3d_prof);
 
         
-        $__internal_0b81fa0bffb29852c716ebe3db63ef3546e82abe8a8e85fcc8f91e5f50357934->leave($__internal_0b81fa0bffb29852c716ebe3db63ef3546e82abe8a8e85fcc8f91e5f50357934_prof);
+        $__internal_7dd8309fa08471760ea0111bc9e575a12622d1b5f1037ca56d33c20b62494707->leave($__internal_7dd8309fa08471760ea0111bc9e575a12622d1b5f1037ca56d33c20b62494707_prof);
 
     }
 
@@ -68,7 +72,7 @@ class __TwigTemplate_bd3fb229717c3193e5cc7c40bdf821fb8863fdef46064118907c3ee30c9
 
     public function getDebugInfo()
     {
-        return array (  49 => 5,  40 => 4,  11 => 2,);
+        return array (  52 => 6,  49 => 5,  40 => 4,  11 => 2,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -86,6 +90,7 @@ class __TwigTemplate_bd3fb229717c3193e5cc7c40bdf821fb8863fdef46064118907c3ee30c9
 
 {% block content %}
     <p>Hello World</p>
+    <p><a href=\"{{ path('hello', {name: 'Alex'}) }}\">Vers la page hello Alex</a></p>
 {% endblock %}
 ", "helloworld.html.twig", "C:\\xampp\\htdocs\\Silex\\intro\\templates\\helloworld.html.twig");
     }
