@@ -4,16 +4,14 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/xampp/htdocs/Silex/intro/src/controllers.php</file>
+            <file>file:/C:/xampp/htdocs/Silex/intro/templates/bibliotheque/abonne.html.twig</file>
+            <file>file:/C:/xampp/htdocs/Silex/intro/templates/bibliotheque/abonnes.html.twig</file>
             <file>file:/C:/xampp/htdocs/Silex/intro/src/app.php</file>
-            <file>file:/C:/xampp/htdocs/Silex/intro/templates/test.html.twig</file>
+            <file>file:/C:/xampp/htdocs/Silex/intro/templates/bibliotheque/abonne_ajout.html.twig</file>
+            <file>file:/C:/xampp/htdocs/Silex/intro/src/Controller/BibliothequeController.php</file>
+            <file>file:/C:/xampp/htdocs/Silex/intro/templates/bibliotheque/abonne_modif.html.twig</file>
+            <file>file:/C:/xampp/htdocs/Silex/intro/templates/bibliotheque/emprunt.html.twig</file>
             <file>file:/C:/xampp/htdocs/Silex/intro/templates/twig.html.twig</file>
-            <file>file:/C:/xampp/htdocs/Silex/intro/templates/included.html.twig</file>
-            <file>file:/C:/xampp/htdocs/Silex/intro/templates/layout.html.twig</file>
-            <file>file:/C:/xampp/htdocs/Silex/intro/src/Controller/DemoController.php</file>
-            <file>file:/C:/xampp/htdocs/Silex/intro/web/index_dev.php</file>
-            <file>file:/C:/xampp/htdocs/Silex/intro/config/prod.php</file>
-            <file>file:/C:/xampp/htdocs/Silex/intro/.gitignore</file>
-            <file>file:/C:/xampp/htdocs/Silex/intro/templates/index.html.twig</file>
         </group>
     </open-files>
 </project-private>

@@ -1,5 +1,7 @@
 <?php
 
+/* Ce fichier va servir notament à définir toutes les routes */
+
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -57,7 +59,52 @@ $app
     ->bind('hello')
 ;
 
+$app
+    ->get('/abonnes', 'bibliotheque.controller:abonnesAction')
+    ->bind('abonnes')
+;
 
+// route détail abonné
+$app
+    ->get('/abonne/{id}', 'bibliotheque.controller:abonneDetailAction')
+    // assert() -> restreindre le nom de la variable <=> type de la variable.
+        // fonction routeur de Silex
+    ->assert('id', '\d+') // la variable id dans l'URL doit être un nombre
+    ->bind('abonne_detail')
+;
+
+// route ajout d'abonné
+$app
+    ->match('/abonne/ajout', 'bibliotheque.controller:abonneAjoutAction')
+    ->bind('abonne_ajout')
+;
+
+// route modification d'abonné
+$app
+    ->match('/abonne/modif/{id}', 'bibliotheque.controller:abonneModifAction')
+    // assert() -> restreindre le nom de la variable <=> type de la variable.
+        // fonction routeur de Silex
+    ->assert('id', '\d+') // la variable id dans l'URL doit être un nombre
+    ->bind('abonne_modif')
+;
+
+// route supprimer
+$app
+    ->get('/abonne/supprimer/{id}', 'bibliotheque.controller:abonneSupprimerAction')
+    // assert() -> restreindre le nom de la variable <=> type de la variable.
+        // fonction routeur de Silex
+    ->assert('id', '\d+') // la variable id dans l'URL doit être un nombre
+    ->bind('abonne_suppression')
+;
+
+
+// route emprunt
+$app
+        ->get('/emprunts', 'bibliotheque.controller:bilanEmpruntAction')
+        ->bind('emprunts')
+;
+
+// gestion des erreurs
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     if ($app['debug']) {
         return;
@@ -72,4 +119,5 @@ $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     );
 
     return new Response($app['twig']->resolveTemplate($templates)->render(array('code' => $code)), $code);
-});
+    }
+);
