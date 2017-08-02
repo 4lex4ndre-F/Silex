@@ -1,0 +1,9 @@
+<!-- n'herite pas du layout car doit être insérée dedans sous forme de liste (menu nav) -->
+<ul class='nav navbar-nav'>
+    {% for category in categories %}
+        <li><a>{{ category.name }}</a></li>
+        <!-- Twig va chercher automatiquement le name avec le getter
+        En réalité, il cherche dabord dans les méthodes publiques, puis les getName(),
+        puis d'autres méthodes spécifiques aux booléens... -->
+    {% endfor %}
+</ul>

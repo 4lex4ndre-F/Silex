@@ -115,23 +115,37 @@ class BibliothequeController
     // -si non rendu : case vide
     public function bilanEmpruntAction(Application $app)
     {
-        $emprunt = $app['db']->fetchAll(
-            /*'SELECT emprunt.id_emprunt, abonne.prenom, livre.auteur, livre.titre, emprunt.date_sortie, emprunt.date_rendu                 FROM abonne, emprunt, livre
+        // requete en notation heredoc -> permet de séparer 1 string en plusieurs lignes (natif PHP)
+        // ne pas le faire entre '' ou "" -> pas dans bonnes pratiques
+        $query = <<<EOS
+SELECT *
+FROM emprunt e
+JOIN livre l USING(id_livre)
+JOIN abonne a USING(id_abonne)
+ORDER BY e.id_emprunt
+EOS;
+            // mes premières requêtes : elles fonctionnent aussi
+            /* 1
+            'SELECT emprunt.id_emprunt, abonne.prenom, livre.auteur, livre.titre, emprunt.date_sortie, emprunt.date_rendu                 FROM abonne, emprunt, livre
             WHERE emprunt.id_abonne = abonne.id_abonne
             AND emprunt.id_livre = livre.id_livre
-            ORDER BY emprunt.id_emprunt'*/
+            ORDER BY emprunt.id_emprunt'
+             */
+            /* 2
             'SELECT * 
                 FROM emprunt
                 LEFT JOIN abonne
                 ON emprunt.id_abonne = abonne.id_abonne
                 LEFT JOIN livre
                 ON emprunt.id_livre = livre.id_livre'
-            );
+            */                
+            
+        $emprunts = $app['db']->fetchAll($query);
         
         return $app['twig']->render(
             'bibliotheque/emprunt.html.twig',
             [
-                'emprunt' => $emprunt
+                'emprunts' => $emprunts
             ]
         );       
     }
