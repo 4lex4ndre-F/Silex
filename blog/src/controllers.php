@@ -35,8 +35,40 @@ $admin
     ->bind('admin_categories')
 ;
 
+// La route match( à la fois /rubrique/edition et rubrique/edition/id
+$admin
+    ->match('/rubrique/edition/{id}', 'admin.category.controller:editAction')
+    ->value('id', null) // valeur par défaut pour l'id
+    ->bind('admin_category_edit') // service admin.category.controller 
+                                        //déjà déclaré dans app.php
+;
 
+$admin
+    ->get('/rubrique/suppression/{id}', 'admin.category.controller:deleteAction')
+    ->assert('id', '\d+') // id doit être un nombre
+    ->bind('admin_category_delete')
+;
 
+$admin
+        ->get('/articles', 'admin.article.controller:listAction')
+        ->bind('admin_articles')
+;
+
+/*
+ *  Créer la partie admin pour les articles :
+ * - Créer le contrôleur Admin\ArticleController qui hérite de ControllerAbstract
+ * - Le définir en servcie dans src/app.php
+ * - y ajouter la méthode listAction() qui va rendre la vue admin/article/list.html.twig
+ * - créer la vue
+ * - créer la route qui pointe sur l'action
+ * - ajouter un lien vers cette route dans la navbar admin
+ * - créer l'entity Article et le repository ArticleRepository qui hérite de RepositoryAbstract
+ * - déclarer le repository en service dans src/app.php
+ * - remplir la méthode listAction() en utilisant ArticleRepository
+ * - faire l'affichage en tableau HTML dans la vue
+ * - terminer les fonctionnalités avec création / modification / suppression
+ * 
+ */
 
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     if ($app['debug']) {

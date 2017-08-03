@@ -2,6 +2,8 @@
 
 namespace Controller;
 
+use Entity\Category;
+
 class CategoryController extends ControllerAbstract
 {
     public function listAction()
@@ -13,8 +15,10 @@ class CategoryController extends ControllerAbstract
         return $this->render(
             'category/liste.html.twig',
             [
-                'categories' => $categories
+                'categories' => $categories // on passe toutes les informations 
+                                            //nécessaires à la vue
             ]
         );
     }
+
 }

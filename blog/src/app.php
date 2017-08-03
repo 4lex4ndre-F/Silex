@@ -10,6 +10,7 @@ use Silex\Provider\AssetServiceProvider;
 use Silex\Provider\DoctrineServiceProvider;
 use Silex\Provider\HttpFragmentServiceProvider;
 use Silex\Provider\ServiceControllerServiceProvider;
+use Silex\Provider\SessionServiceProvider;
 use Silex\Provider\TwigServiceProvider;
 
 $app = new Application();
@@ -23,7 +24,8 @@ $app['twig'] = $app->extend('twig', function ($twig, $app) {
     return $twig;
 });
 
-/* connexion à la BDD via :
+/**
+ * connexion à la BDD via :
  * DOCTRINE ->
  *  -> DBAL : couche de base doctrine ~PDO - Data Base Abstraction Layer
  *  -> ORM : Objet Relation Mapping (on ne va pas s'en servir ici)
@@ -51,6 +53,8 @@ $app->register(
     ]
 );
 
+/* $app['session'] = gestionnaire de session de Symfony */
+$app->register(new SessionServiceProvider());
 
 /* ---------------CONTROLLERS--------------- */
 /* Front */
@@ -68,9 +72,17 @@ $app['admin.category.controller'] = function() use ($app) {
     return new \Controller\Admin\CategoryController($app);
 };
 
+$app['admin.article.controller'] = function() use ($app) {
+    return new \Controller\Admin\ArticleController($app);
+};
+
 /* ---------------REPOSITORIES--------------- */
 $app['category.repository'] = function() use ($app) {
     return new CategoryRepository($app);
+};
+
+$app['article.repository'] = function() use ($app) {
+    return new Repository\ArticleRepository($app);
 };
 
 return $app;

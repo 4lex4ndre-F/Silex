@@ -22,6 +22,9 @@
                     <li>
                         <a href="{{ path('admin_categories') }}">Gestions rubriques</a>
                     </li>
+                    <li>
+                        <a href="{{ path('admin_articles') }}">Gestions articles</a>
+                    </li>
                 </ul>
             </div>            
         </nav>
@@ -37,6 +40,15 @@
             </div>
         </nav>
         <div class="container"><!-- container bootstrap -->
+            {% for type, flashes in app.session.flashbag.all %}
+                {% for flash in flashes %}
+                    {% if type == 'error' %}
+                        {# classe alert-danger de Bootstrap #}
+                        {% set type = 'danger' %}
+                    {% endif %}
+                    <div class="alert alert-{{ type }}">{{ flash|raw }}</div>
+                {% endfor %}
+            {% endfor %}
             {% block content %}{% endblock %}{# bloc contenu #}
         </div>
         

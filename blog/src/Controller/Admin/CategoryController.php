@@ -3,6 +3,7 @@
 namespace Controller\Admin;
 
 use Controller\ControllerAbstract;
+use Entity\Category;
 
 class CategoryController extends ControllerAbstract
 {
@@ -17,5 +18,73 @@ class CategoryController extends ControllerAbstract
                 'categories' => $categories
             ]
         );
+    }
+    
+        
+    public function editAction($id = null) // méthode qui va rendre une vue avec un 
+                                    //formulaire d'édition des catégories
+    {
+        if (!is_null ($id)) {
+            // on va chercher la catégorie en bdd
+            $category = $this->app['category.repository']->find($id); // on doit écrire la méthode find()
+            
+            if(!$category instanceof Category) {
+                $this->app->abort(404);
+            }
+        } else{
+            // nouvelle catégorie
+            $category = new Category();
+        }
+        
+        $errors = [];
+        
+        
+        if(!empty($_POST)){
+            $category->setName($_POST['name']);
+            
+            if (empty($_POST['name'])){
+                $errors['name'] = 'Le nom est obligatoire';
+            } elseif (strlen($_POST['name']) > 20){
+                $errors['name'] = 'Le nom ne doit pas faire plus de 20 caractères';
+            }
+            
+            if (empty($errors)) {
+                // on appelle la methode save (qu'il faut créer) de la classe CategoryRepository
+                $this->app['category.repository']->save($category); 
+
+                $this->addFlashMessage('La rubrique est enregistrée');
+                return $this->redirectRoute('admin_categories');
+                
+            } else {
+                $message = '<strong>Le formulaire contient des erreurs.</strong>';
+                $message .= '<br>' . implode('<br>', $errors);
+                $this->addFlashMessage($message, 'error');
+            }
+
+        }
+        
+        return $this->render(
+            'admin/category/edit.html.twig',
+            [
+                'category' => $category
+            ]
+        );
+    }
+    
+    
+    public function deleteAction($id)
+    {
+        $category = $this->app['category.repository']->find($id);
+        
+        if (!$category instanceof Category) // ~(empty($category)
+        {
+            $this->app->abort(404);
+        }
+        
+        $this->app['category.repository']->delete($category);
+        
+        $this->addFlashMessage('La rubrique est supprimée');
+        
+        return $this->redirectRoute('admin_categories');
     }
 }
