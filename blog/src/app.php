@@ -67,6 +67,12 @@ $app['category.controller'] = function() use ($app) {
     return new CategoryController($app);
 };
 
+$app['user.controller'] = function () use ($app) {
+    return new Controller\UserController($app);
+};  
+
+
+
 /* back */
 $app['admin.category.controller'] = function() use ($app) {
     return new \Controller\Admin\CategoryController($app);
@@ -83,6 +89,10 @@ $app['category.repository'] = function() use ($app) {
 
 $app['article.repository'] = function() use ($app) {
     return new Repository\ArticleRepository($app);
+};
+
+$app['user.repository'] = function() use($app) {
+    return new Repository\UserRepository($app);
 };
 
 return $app;

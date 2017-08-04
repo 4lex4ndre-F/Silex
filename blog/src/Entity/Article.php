@@ -27,10 +27,14 @@ class Article
      * @var string 
      */
     private $content;
-    
-    
-    
-    
+
+    /**
+     *
+     * @var Category 
+     */
+    private $category;
+    // objet de la classe catégorie pour faire le lien entre les tables article et catergoy
+
     /**
      * 
      * @return int
@@ -103,8 +107,34 @@ class Article
         return $this;
     }
 
+    public function getCategory() {
+        return $this->category;
+    }
 
-  
-
+    public function setCategory(Category $category) {
+        $this->category = $category;
+        return $this;
+    }
+    
+    public function getCategoryId()
+    {
+        if (!is_null($this->category)) {
+            return $this->category->getId();
+        }
+    }
+    
+    /**
+     * 
+     * @return string
+     */
+    public function getCategoryName()
+    {
+        if (!is_null($this->category)) {
+            return $this->category->getName();
+        }
+        
+        return '';
+    }
+    
 }
 

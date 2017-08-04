@@ -37,8 +37,14 @@
                 {# la route category_list n'est pas destinée à être affichée telle quelle #}
                 {# inclus e rendu de la route #}
                 {{ render(url('category_list')) }}
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="{{ path('user_register') }}">Créer un compte</a>
+                    </li>
+                </ul>
             </div>
         </nav>
+
         <div class="container"><!-- container bootstrap -->
             {% for type, flashes in app.session.flashbag.all %}
                 {% for flash in flashes %}

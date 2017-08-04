@@ -19,15 +19,21 @@ $app
     ->bind('category_list')
 ;
 
+$app
+    ->match('/utilisateur/inscription', 'user.controller:registerAction')
+    ->bind('user_register')
+;
+
 
 /* BACK */
 
 /* groupe de routes spécifiques admin */
 $admin = $app['controllers_factory']; // service de l'appli
-
 // toutes les routes définies par $admin auront une URL commencant par /admin 
 // sans avoir à l'ajouter dans chaque route
 $app->mount('/admin', $admin); // préfixe dans l'URL, $admin
+
+/* RUBRIQUES */
 
 // l'URL de cette route est /admin/rubriques
 $admin
@@ -49,9 +55,23 @@ $admin
     ->bind('admin_category_delete')
 ;
 
+
+/* ARTICLES */
 $admin
-        ->get('/articles', 'admin.article.controller:listAction')
-        ->bind('admin_articles')
+    ->get('/articles', 'admin.article.controller:listAction')
+    ->bind('admin_articles')
+;
+
+$admin
+    ->match('/article/edition/{id}', 'admin.article.controller:editAction')
+    ->value('id', null) // pour que la route match quand même sans id
+    ->bind('admin_article_edit')
+;
+
+$admin
+    ->get('/article/suppression/{id}', 'admin.article.controller:deleteAction')
+    ->assert('id', '\d+') // id doit être un nombre
+    ->bind('admin_article_delete')
 ;
 
 /*
